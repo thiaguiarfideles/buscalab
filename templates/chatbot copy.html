@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Busca Exame Lab</title>
+    <!-- Adicionando os arquivos CSS do Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<style>
+    .alert-info {
+    width: 100%; /* Defina a largura desejada em pixels ou porcentagem */
+    list-style-type: disc;
+}   
+    
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pesquisa Exames: Base TASY | Matrix</h1>
+        <form method="POST" action="/chatbot">
+            <div class="form-group">
+                <label for="message">Faça sua busca pelo nome do exame ou nr_seq_exame:</label>
+                <input type="text" class="form-control" name="message" id="message">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+        {% if message %}
+        <div class="alert alert-info mt-3" style="width: 100%;">
+            <strong>Resposta:</strong>
+            <ul>
+            {% for item in message %}
+                <li>{{ item }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+
+        {% endif %}
+    </div>
+    <!-- Adicionando os arquivos JavaScript do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
